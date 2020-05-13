@@ -6,7 +6,7 @@ class App extends React.Component{
 
   handleClick = () => {
     console.log( 'in handleClick' );
-    this.props.dispatch( { type: 'test', payload: 'test info' } );
+    this.props.dispatch( { type: 'test00', payload: 'test info' } );
   }
 
   componentDidMount(){
