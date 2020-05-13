@@ -4,6 +4,11 @@ import { connect } from 'react-redux';
 
 class App extends React.Component{
 
+  handleClick = () => {
+    console.log( 'in handleClick' );
+    this.props.dispatch( { type: 'test', payload: 'test info' } );
+  }
+
   componentDidMount(){
     console.log( this.props );
   }
@@ -15,6 +20,9 @@ class App extends React.Component{
           <p>
             Lamport Combine Logger
           </p>
+          <p>Reducer One: { this.props.reduxState.reducerOne }</p>
+          <p>Reducer Two: { this.props.reduxState.reducerTwo }</p>
+          <button onClick={ this.handleClick }>Test Dispatch</button>
         </header>
       </div>
     ); // end return
