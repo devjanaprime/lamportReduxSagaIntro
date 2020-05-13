@@ -6,11 +6,12 @@ class App extends React.Component{
 
   handleClick = () => {
     console.log( 'in handleClick' );
-    this.props.dispatch( { type: 'test00', payload: 'test info' } );
+    this.props.dispatch( { type: 'test', payload: 'test info' } );
   }
 
   componentDidMount(){
     console.log( this.props );
+    this.props.dispatch( { type: 'FETCH_STARSHIPS' } );
   }
 
   render() {
@@ -23,6 +24,7 @@ class App extends React.Component{
           <p>Reducer One: { this.props.reduxState.reducerOne }</p>
           <p>Reducer Two: { this.props.reduxState.reducerTwo }</p>
           <button onClick={ this.handleClick }>Test Dispatch</button>
+          <p>{ JSON.stringify( this.props.reduxState.shipReducer ) }</p>
         </header>
       </div>
     ); // end return

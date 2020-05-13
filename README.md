@@ -23,3 +23,11 @@ React Saga
 
 - npm install redux-saga
 - 
+
+lecture 2:
+---
+
+- import createSagaMiddleware from 'react-redux';
+- const sagaMiddleware = createSagaMiddleware( watcherSaga );
+- add sagaMiddleware to applyMiddleware
+- sagaMiddleware.run( watcherSaga ); // do this after applyMiddleware
